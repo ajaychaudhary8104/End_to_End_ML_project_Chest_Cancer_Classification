@@ -2,7 +2,8 @@ tensorflow
 pandas 
 gdown
 dvc
-mlflow==2.2.1
+mlflow
+ipykernel
 notebook
 numpy
 matplotlib
