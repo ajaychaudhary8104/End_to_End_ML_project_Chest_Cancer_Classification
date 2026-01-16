@@ -79,3 +79,35 @@ stages:
       hash: md5
       md5: a2995bfaea22af544e00f534c0b37ee7
       size: 59141294
+  evaluation:
+    cmd: python src/cnnClassifier/pipeline/stage_04_model_evaluation.py
+    deps:
+    - path: artifacts/data_ingestion/Chest-CT-Scan-data
+      hash: md5
+      md5: 904fa45d934ce879b3b1933dca6cb2f1.dir
+      size: 49247431
+      nfiles: 343
+    - path: artifacts/training/model.keras
+      hash: md5
+      md5: a2995bfaea22af544e00f534c0b37ee7
+      size: 59141294
+    - path: config/config.yaml
+      hash: md5
+      md5: a4496b292e0ce5a75ee2359ab6670871
+      size: 593
+    - path: src/cnnClassifier/pipeline/stage_04_model_evaluation.py
+      hash: md5
+      md5: 88c213ffd40e6be598d06758d40a7f5c
+      size: 854
+    params:
+      params.yaml:
+        BATCH_SIZE: 16
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+    outs:
+    - path: scores.json
+      hash: md5
+      md5: 332a5e63959425838be67cc959f72dc4
+      size: 73
